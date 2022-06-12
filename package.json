@@ -1,7 +1,8 @@
 {
-  "name": "react-homework-template",
+  "name": "goit-react-hw-08-phonebook",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Maks-c.github.io/goit-react-hw-08-phonebook",
 
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
