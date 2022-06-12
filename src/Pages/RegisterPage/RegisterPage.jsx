@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import  operations  from '../../Redux/auth/auth-operations';
+import { authOperations } from '../../redux/auth';
 
 const styles = {
   form: {
@@ -37,7 +37,7 @@ export default function RegisterPage(){
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(operations.register({ name, email, password }));
+    dispatch(authOperations.register({ name, email, password }));
     setPassword('');
     setEmail('');
     setName('');
@@ -46,7 +46,7 @@ export default function RegisterPage(){
   return (
     <div>
       <h1> Сторінка реестрації</h1>
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete='off'>
+      <form onSubmit={handleSubmit} style={styles.form} >
         <label style={styles.label}>Name
           <input type='text' name='name' value={name} onChange={handleChange} />
         </label>

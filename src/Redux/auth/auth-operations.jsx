@@ -3,44 +3,55 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
+const token = {
+  set(token){
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  },
+  unset(){
+    axios.defaults.headers.common.Authorization = '';
+  },
+};
 
 
 const register = createAsyncThunk('auth/register',
   async credentials => {
-  try{
-    const { data } = await axios.post('/users/signup', credentials);
-    return data;
-  } catch (error){
-    console.log(error.message);
-  }
-});
+    try{
+      const { data } = await axios.post('/users/signup', credentials);
+      token.set(data.token);
+      console.log(credentials);
+      console.log(data);
+      return data;
+    } catch (error){
+      console.log(error.message);
+    }
+  });
 
 const logIn = createAsyncThunk('auth/login',
   async credentials => {
-  try{
-    const { data } = await axios.post('/users/login', credentials);
-    return data
-  } catch (error){
-    console.log('wrong password');
-  }
-});
+    try{
+      const { data } = await axios.post('/users/login', credentials);
+      token.set(data.token);
+      console.log(credentials);
+      console.log(data);
+      return data;
+    } catch (error){
+      console.log(error.message);
+    }
+  });
 
 const logOut = createAsyncThunk('auth/logout',
   async () => {
-  try{
-    const { data } = await axios.post('/users/logout');
-    return data;
-  } catch (error){
-    console.log('wrong password');
-  }
-});
+    try{
+      await axios.post('/users/logout');
+      token.unset();
+    } catch (error){
+      console.log(error.message);
+    }
+  });
 
 
-
-
-
-const operations = { register,logIn,logOut};
-export default operations;
+const authOperations = { register, logIn, logOut };
+export default authOperations;
 
 
 

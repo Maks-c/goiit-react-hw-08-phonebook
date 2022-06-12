@@ -1,5 +1,5 @@
 import AppBar from './AppBar';
-import { Route,Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import HomePage from '../Pages/HomePage';
 import RegisterPage from '../Pages/RegisterPage';
 import LoginPage from '../Pages/LoginPage';
@@ -15,15 +15,15 @@ export const App = () => {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
+        color: '#010101',
       }}
     >
-      <AppBar/>
+      <AppBar />
       <Routes>
-        <Route path='/' element={<HomePage/>}/>
-        <Route path='/register' element={<RegisterPage/>}/>
-        <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/contacts' element={<PhonebookPage/>}/>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/register' element={<RegisterPage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/contacts' element={<PhonebookPage />} />
       </Routes>
     </div>
   );
