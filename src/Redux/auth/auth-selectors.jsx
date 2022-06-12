@@ -9,7 +9,7 @@ const authSelectors = {
 };
 
 
-console.log(authSelectors.getIsLoggedIn);
+
 
 export default authSelectors;
 

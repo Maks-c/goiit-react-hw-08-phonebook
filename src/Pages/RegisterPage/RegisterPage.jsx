@@ -38,6 +38,8 @@ export default function RegisterPage(){
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(authOperations.register({ name, email, password }));
+
+
     setPassword('');
     setEmail('');
     setName('');
