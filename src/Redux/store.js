@@ -28,7 +28,8 @@ const store = configureStore({
     filter: filterReducer,
     [contactApi.reducerPath]: contactApi.reducer,
   },
-  middleware: getDefaultMiddleware =>[...getDefaultMiddleware({ serializableCheck: { ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER], }, }),contactApi.middleware],
+  middleware: getDefaultMiddleware =>[...getDefaultMiddleware({ serializableCheck: { ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER], }, }),
+    contactApi.middleware],
 
 });
 
