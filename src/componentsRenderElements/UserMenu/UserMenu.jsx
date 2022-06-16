@@ -5,6 +5,7 @@ import authOperations from '../../redux/auth/auth-operations';
 export default function UserMenu(){
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
+
   console.log(name);
   return (
     <div>

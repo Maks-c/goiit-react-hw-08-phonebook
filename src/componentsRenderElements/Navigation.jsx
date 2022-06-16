@@ -1,12 +1,21 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { authSelectors } from '../redux/auth';
 
+const Navigation = () => {
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
-const Navigation = () => (
-  <nav>
-    <Link to='/'>Welcome</Link>
-    <Link to='/contacts'>Phone Book</Link>
-  </nav>
-);
+  return (
+    <nav>
+      <Link to='/'>Welcome</Link>
+      {
+        isLoggedIn && (<Link to='/contacts'>Phone Book</Link>)
+      }
+
+    </nav>
+  );
+
+};
 
 
 export default Navigation;
