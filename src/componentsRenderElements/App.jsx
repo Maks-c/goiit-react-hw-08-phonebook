@@ -28,7 +28,6 @@ export const App = () => {
         <AppBar />
         <Suspense fallback={<p>'Upload...'</p>}>
           <Routes>
-
             <Route index path='/' element={<HomePage />} />
 
             <Route path='/register' element={
@@ -50,7 +49,6 @@ export const App = () => {
                   <PhonebookPage />
                 </PrivateRout>}
             />
-
           </Routes>
         </Suspense>
       </>)}
