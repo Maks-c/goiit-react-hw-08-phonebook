@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { authSelectors } from 'redux/auth';
-import authOperations from '../../redux/auth/auth-operations';
+import { authSelectors } from 'Redux/auth';
+import authOperations from '../../Redux/auth/auth-operations';
 import { MainHead } from './UserMenuStyle';
 
 

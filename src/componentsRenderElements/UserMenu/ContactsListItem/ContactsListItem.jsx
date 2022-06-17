@@ -2,7 +2,7 @@ import React from 'react';
 //==============================================
 import { SpanItem } from './ContactsListItemStyle';
 
-import { useDeleteContactMutation } from '../../../redux/contacts/contacts';
+import { useDeleteContactMutation } from '../../../Redux/contacts/contacts';
 import { Button, Item } from '../Contacts/ContactsStyle';
 
 

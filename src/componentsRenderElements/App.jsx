@@ -2,7 +2,7 @@ import AppBar from './AppBar';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, Suspense, lazy } from 'react';
-import { authOperations, authSelectors } from '../redux/auth';
+import { authOperations, authSelectors } from '../Redux/auth';
 
 import PrivateRout from './PrivateRout';
 import PublicRout from './PublicRout';

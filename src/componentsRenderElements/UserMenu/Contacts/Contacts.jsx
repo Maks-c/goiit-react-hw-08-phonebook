@@ -1,4 +1,4 @@
-import{useGetContactsQuery} from '../../../redux/contacts/contacts';
+import{useGetContactsQuery} from '../../../Redux/contacts/contacts';
 import {useSelector} from 'react-redux';
 import React from 'react';
 import ContactListItem from '../ContactsListItem';
