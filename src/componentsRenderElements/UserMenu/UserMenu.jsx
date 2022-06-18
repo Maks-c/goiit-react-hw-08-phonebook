@@ -14,9 +14,9 @@ export default function UserMenu(){
   console.log(name);
   return (
     <div>
-      <MainHead>Your Phonebook</MainHead>
       <span>Welcome, {name}</span>
       <button type='button' onClick={() => dispatch(authOperations.logOut())}>Log out</button>
+      <MainHead>Your Phonebook</MainHead>
     </div>
   );
 }

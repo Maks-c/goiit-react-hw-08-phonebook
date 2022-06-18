@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useCreateContactMutation, useGetContactsQuery } from '../../../Redux/contacts/contacts';
 import { toast } from 'react-toastify';
-
+import Button from '@mui/material/Button';
 
 //==========================================================
 
@@ -77,7 +77,7 @@ function Form(){
                  value={number}
           />
         </label>
-        <button type='submit'>Add contact</button>
+        <Button variant="contained" type='submit'>Add contact</Button>
       </form>
 
     </>

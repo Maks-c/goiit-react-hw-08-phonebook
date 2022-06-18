@@ -3,6 +3,9 @@ import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, Suspense, lazy } from 'react';
 import { authOperations, authSelectors } from '../Redux/auth';
+import Header from './Header';
+//================mui
+import Container from '@mui/material/Container';
 
 import PrivateRout from './PrivateRout';
 import PublicRout from './PublicRout';
@@ -23,8 +26,9 @@ export const App = () => {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
-  return (<div>
+  return (<Container fixed sx={{ bgcolor: '#cfe8fc', height: '100vh' }}>
       {isFetchingCurrentUser ? (<h1>React Skeleton</h1>) : (<>
+        <Header/>
         <AppBar />
         <Suspense fallback={<p>'Upload...'</p>}>
           <Routes>
@@ -52,6 +56,6 @@ export const App = () => {
           </Routes>
         </Suspense>
       </>)}
-    </div>
+    </Container>
   );
 };

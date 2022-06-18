@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../Redux/auth';
+import { TextField } from '@mui/material';
 
 const styles = {
   form: {
@@ -33,7 +34,7 @@ export default function LoginPage(){
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(authOperations.logIn({email, password }));
+    dispatch(authOperations.logIn({ email, password }));
     setPassword('');
     setEmail('');
 
@@ -43,14 +44,22 @@ export default function LoginPage(){
     <div>
       <h1> Сторінка логування</h1>
       <form onSubmit={handleSubmit} style={styles.form} autoComplete='off'>
-        <label style={styles.label}>
-          Email
-          <input type='text' name='email' value={email} onChange={handleChange} />
-        </label>
-        <label style={styles.label}>
-          Password
-          <input type='text' name='password' value={password} onChange={handleChange} />
-        </label>
+        <TextField
+          label='email'
+          type='text'
+          name='email'
+          value={email}
+          onChange={handleChange}
+        />
+
+        <TextField
+          label='password'
+          type='text'
+          name='password'
+          value={password}
+          onChange={handleChange}
+        />
+
         <button>Log in</button>
       </form>
     </div>

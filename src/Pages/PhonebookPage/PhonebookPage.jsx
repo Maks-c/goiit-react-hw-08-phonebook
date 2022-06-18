@@ -18,7 +18,6 @@ export default function PhonebookPage(){
       <Contacts />
       <Filter />
       <ToastContainer theme='colored' autoClose={500} />
-
     </Wrapper>
   );
 }

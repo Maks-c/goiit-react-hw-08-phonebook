@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 
 export const MainHead = styled.h1`
   text-align: center;
-  margin: 1em 0 0.5em 0;
+  //margin: 1em 0 0.5em 0;
   font-weight: 600;
   font-family: 'Titillium Web', sans-serif;
   position: relative;
