@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../Redux/auth';
 import { TextField } from '@mui/material';
+import Button from '@mui/material/Button';
+import {LoginForm} from './LoginPageStyle'
 
 const styles = {
-  form: {
-    width: 320,
-  },
+
   label: {
     display: 'flex',
     flexDirection: 'column',
@@ -43,8 +43,9 @@ export default function LoginPage(){
   return (
     <div>
       <h1> Сторінка логування</h1>
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete='off'>
+      <LoginForm onSubmit={handleSubmit} style={styles.form} autoComplete='off'>
         <TextField
+          variant='standard'
           label='email'
           type='text'
           name='email'
@@ -53,15 +54,16 @@ export default function LoginPage(){
         />
 
         <TextField
+          variant='standard'
           label='password'
           type='text'
           name='password'
           value={password}
           onChange={handleChange}
         />
-
-        <button>Log in</button>
-      </form>
+{/*<button>Log</button>*/}
+        <Button type='submit' variant="contained">Enter</Button>
+      </LoginForm>
     </div>
   );
 }

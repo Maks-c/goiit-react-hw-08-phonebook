@@ -1,7 +1,13 @@
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
-import { ShoppingBasket } from '@mui/icons-material';
+import { AppBar,Toolbar, Typography } from '@mui/material';
+import { useSelector } from 'react-redux';
+import { authSelectors } from '../Redux/auth';
+import AuthNav from './AuthNav/AuthNav';
+
+// import { ShoppingBasket } from '@mui/icons-material';
 
 function Header(){
+  const isLoggedIn=useSelector(authSelectors.getIsLoggedIn)
+  const name=useSelector(authSelectors.getUserName)
   return (
     <AppBar position='static' >
       <Toolbar>
@@ -9,14 +15,9 @@ function Header(){
           variant='h6'
           component='span'
         >
-          Phone Book
+          {isLoggedIn ? <h3>Hello,{name}</h3> : <h3>Welcome</h3> }
+          <AuthNav/>
         </Typography>
-        <IconButton
-          color='inherit'
-          sx={{flexGrow:1}}
-        >
-          <ShoppingBasket />
-        </IconButton>
       </Toolbar>
     </AppBar>
   );

@@ -3,24 +3,21 @@ import React from 'react';
 import { SpanItem } from './ContactsListItemStyle';
 
 import { useDeleteContactMutation } from '../../../Redux/contacts/contacts';
-import { Button, Item } from '../Contacts/ContactsStyle';
-
+import { Item } from '../Contacts/ContactsStyle';
+import Button from '@mui/material/Button';
 
 
 const ContactListItem = ({ id, name, number }) => {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
 
   return (
-    <>
-      <Item key={id}>
-        <SpanItem>{name}</SpanItem>
-        <SpanItem>{number}</SpanItem>
-        <Button  onClick={() => deleteContact(id)} >
-          {isDeleting ? 'Deleting...' : 'Delete'}
-        </Button>
-      </Item>
-
-    </>
+        <Item key={id}>
+          <SpanItem>{name}</SpanItem>
+          <SpanItem>{number}</SpanItem>
+          <Button sx={{ml:2}} onClick={() => deleteContact(id)} >
+            {isDeleting ? 'Deleting...' : 'Delete'}
+          </Button>
+        </Item>
   );
 };
 

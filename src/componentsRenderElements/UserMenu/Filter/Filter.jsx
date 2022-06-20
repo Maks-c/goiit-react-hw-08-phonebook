@@ -3,6 +3,7 @@ import { FilterDiv } from './FilterStyle';
 import { addFilter } from '../../../Redux/contacts/filterSlice';
 import { useDispatch } from 'react-redux';
 import AwesomeDebouncePromise from 'awesome-debounce-promise';
+import { TextField } from '@mui/material';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -11,15 +12,18 @@ const Filter = () => {
   const getFilter = e => {
     dispatch(addFilter(e.target.value));
   };
-  const searchDebounced= AwesomeDebouncePromise(getFilter,500)
+  const searchDebounced = AwesomeDebouncePromise(getFilter, 500);
 
 
   return (
     <FilterDiv>
-      <input type='text'
-             name='filter'
-             id='filter'
-             onChange={searchDebounced}
+      <TextField
+        label='search name'
+        variant='standard'
+        type='text'
+        name='filter'
+        id='filter'
+        onChange={searchDebounced}
       />
     </FilterDiv>
   );

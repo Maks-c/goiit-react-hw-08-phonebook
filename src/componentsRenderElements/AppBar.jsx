@@ -1,5 +1,5 @@
 import Navigation from './Navigation';
-import AuthNav from './AuthNav';
+import AuthNav from './AuthNav/AuthNav';
 import UserMenu from './UserMenu/UserMenu';
 
 

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../Redux/auth';
+import { TextField } from '@mui/material';
+import { RegisterForm } from './RegisterPageStyle';
+import Button from '@mui/material/Button';
 
 const styles = {
-  form: {
-    width: 320,
-  },
+
   label: {
     display: 'flex',
     flexDirection: 'column',
@@ -48,18 +49,12 @@ export default function RegisterPage(){
   return (
     <div>
       <h1> Сторінка реестрації</h1>
-      <form onSubmit={handleSubmit} style={styles.form} >
-        <label style={styles.label}>Name
-          <input type='text' name='name' value={name} onChange={handleChange} />
-        </label>
-        <label style={styles.label}>Email
-          <input type='text' name='email' value={email} onChange={handleChange} />
-        </label>
-        <label style={styles.label}>Password
-          <input type='text' name='password' value={password} onChange={handleChange} />
-        </label>
-        <button>Sign up</button>
-      </form>
+      <RegisterForm onSubmit={handleSubmit} style={styles.form}>
+        <TextField variant='standard' label='name' type='text' name='name' value={name} onChange={handleChange} />
+        <TextField variant='standard' label='email' type='text' name='email' value={email} onChange={handleChange} />
+        <TextField variant='standard' label='password' type='text' name='password' value={password} onChange={handleChange} />
+        <Button type='submit' variant="contained">Sign Up</Button>
+      </RegisterForm>
     </div>
   );
 }
