@@ -3,10 +3,7 @@ import { useCreateContactMutation, useGetContactsQuery } from '../../../Redux/co
 import { toast } from 'react-toastify';
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
-import {UserForm} from './FormStyle';
-
-//==========================================================
-
+import { UserForm } from './form.styled';
 
 function Form(){
   const [createContact] = useCreateContactMutation();
@@ -15,18 +12,8 @@ function Form(){
   const [number, setNumber] = useState('');
 
   const handleChange = e => {
-    const name = e.currentTarget.name;
-    const value = e.target.value;
-    switch (name){
-      case 'name':
-        setName(value);
-        break;
-      case 'number':
-        setNumber(value);
-        break;
-      default:
-        return;
-    }
+    const { name, value } = e.target;
+    name === 'name' ? setName(value) : setNumber(value);
   };
 
 
@@ -55,9 +42,9 @@ function Form(){
 
   return (
     <>
-      <UserForm onSubmit={handleSubmit} >
+      <UserForm onSubmit={handleSubmit}>
         <TextField
-          sx={{mr:'25px'}}
+          sx={{ mr: '25px' }}
           variant='standard'
           label='name'
           type='text'
@@ -82,12 +69,8 @@ function Form(){
         />
         <Button variant='contained' type='submit'>Add contact</Button>
       </UserForm>
-
     </>
-
   );
-
-
 }
 
 export default Form;

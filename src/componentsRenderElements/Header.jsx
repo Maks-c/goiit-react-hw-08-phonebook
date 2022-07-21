@@ -1,9 +1,7 @@
 import { AppBar,Toolbar, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { authSelectors } from '../Redux/auth';
-import AuthNav from './AuthNav/AuthNav';
-
-// import { ShoppingBasket } from '@mui/icons-material';
+import AuthNav from './authNav/AuthNav';
 
 function Header(){
   const isLoggedIn=useSelector(authSelectors.getIsLoggedIn)

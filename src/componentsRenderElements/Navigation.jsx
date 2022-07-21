@@ -7,7 +7,7 @@ const Navigation = () => {
 
   return (
     <nav>
-      {/*<Link to='/'>Welcome</Link>*/}
+
       {
         isLoggedIn && (<Link to='/contacts'>Phone Book</Link>)
       }

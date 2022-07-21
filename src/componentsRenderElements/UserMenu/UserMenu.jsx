@@ -1,9 +1,6 @@
-import {useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { authSelectors } from 'Redux/auth';
-import { MainHead } from './UserMenuStyle';
-
-
-
+import { MainHead } from './userMenu.styled';
 
 
 export default function UserMenu(){

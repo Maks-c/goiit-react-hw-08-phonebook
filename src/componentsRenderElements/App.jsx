@@ -1,19 +1,18 @@
-
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, Suspense, lazy } from 'react';
 import { authOperations, authSelectors } from '../Redux/auth';
 import Header from './Header';
-//================mui
+
 import Container from '@mui/material/Container';
 
 import PrivateRout from './PrivateRout';
 import PublicRout from './PublicRout';
 
 
-const RegisterPage = lazy(() => import('../Pages/RegisterPage'));
-const LoginPage = lazy(() => import('../Pages/LoginPage'));
-const PhonebookPage = lazy(() => import('../Pages/PhonebookPage'));
+const RegisterPage = lazy(() => import('../Pages/registerPage'));
+const LoginPage = lazy(() => import('../Pages/loginPage'));
+const PhonebookPage = lazy(() => import('../Pages/phonebookPage'));
 
 
 export const App = () => {
@@ -27,7 +26,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <Container fixed sx={{ bgcolor: '#cfe8fc', height: '100vh'}}>
+    <Container fixed sx={{ bgcolor: '#cfe8fc', height: '100vh' }}>
       {isFetchingCurrentUser ? (<h1>React Skeleton</h1>) :
         (<>
           <Header />

@@ -1,10 +1,10 @@
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-import Form from '../../componentsRenderElements/UserMenu/Form';
-import Contacts from '../../componentsRenderElements/UserMenu/Contacts';
-import Filter from '../../componentsRenderElements/UserMenu/Filter';
-import { Wrapper } from '../../componentsRenderElements/UserMenu/UserMenuStyle';
+import Form from '../../componentsRenderElements/UserMenu/form';
+import Contacts from '../../componentsRenderElements/UserMenu/contacts';
+import Filter from '../../componentsRenderElements/UserMenu/filter';
+import { Wrapper } from '../../componentsRenderElements/UserMenu/userMenu.styled';
 
 
 
