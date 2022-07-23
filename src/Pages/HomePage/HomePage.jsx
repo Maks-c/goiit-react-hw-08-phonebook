@@ -7,6 +7,7 @@ export default function HomePage(){
   return (
     <div>
       <h1> Hello </h1>
+      <p>do something</p>
     </div>
   )
 

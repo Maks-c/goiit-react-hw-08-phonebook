@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { authSelectors } from '../Redux/auth';
+import { authSelectors } from '../../redux/auth';
 
 export default function PublicRout({
                                      children,
-                                     navigateTo = '/contacts',
+                                     navigateTo = '/ContactsList',
                                      restricted = false,
                                    },
 ){

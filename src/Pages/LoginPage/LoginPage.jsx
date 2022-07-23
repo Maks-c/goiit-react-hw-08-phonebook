@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authOperations } from '../../Redux/auth';
+import { authOperations } from '../../redux/auth';
 import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
-import {LoginForm} from './LoginPageStyle'
+import {LoginForm} from './LoginPag.styled'
 
 const styles = {
 

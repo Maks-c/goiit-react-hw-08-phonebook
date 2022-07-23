@@ -1,8 +1,8 @@
 import React from 'react';
-import { SpanItem } from './contacts-list-Item.styled';
+import { SpanItem } from './ContactsListItem.styled';
 
-import { useDeleteContactMutation } from '../../../Redux/contacts/contacts';
-import { Item } from '../contacts/contacts.styled';
+import { useDeleteContactMutation } from '../../redux/contacts/contacts';
+import { Item } from '../ContactsList/ContactsList.styled';
 import Button from '@mui/material/Button';
 
 

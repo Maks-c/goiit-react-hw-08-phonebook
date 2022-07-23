@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authOperations } from '../../Redux/auth';
+import { authOperations } from '../../redux/auth';
 import { TextField } from '@mui/material';
-import { RegisterForm } from './RegisterPageStyle';
+import { RegisterForm } from './RegisterPage.styled';
 import Button from '@mui/material/Button';
 
 const styles = {
-
   label: {
     display: 'flex',
     flexDirection: 'column',
@@ -39,8 +38,6 @@ export default function RegisterPage(){
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(authOperations.register({ name, email, password }));
-
-
     setPassword('');
     setEmail('');
     setName('');
@@ -52,8 +49,9 @@ export default function RegisterPage(){
       <RegisterForm onSubmit={handleSubmit} style={styles.form}>
         <TextField variant='standard' label='name' type='text' name='name' value={name} onChange={handleChange} />
         <TextField variant='standard' label='email' type='text' name='email' value={email} onChange={handleChange} />
-        <TextField variant='standard' label='password' type='text' name='password' value={password} onChange={handleChange} />
-        <Button type='submit' variant="contained">Sign Up</Button>
+        <TextField variant='standard' label='password' type='text' name='password' value={password}
+                   onChange={handleChange} />
+        <Button type='submit' variant='contained'>Sign Up</Button>
       </RegisterForm>
     </div>
   );

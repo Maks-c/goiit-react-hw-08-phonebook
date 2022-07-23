@@ -1,18 +1,18 @@
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, Suspense, lazy } from 'react';
-import { authOperations, authSelectors } from '../Redux/auth';
-import Header from './Header';
+import { authOperations, authSelectors } from '../redux/auth';
+import Header from '../components/Header/Header';
 
 import Container from '@mui/material/Container';
 
-import PrivateRout from './PrivateRout';
-import PublicRout from './PublicRout';
+import PrivateRout from '../components/Navigation/PrivateRout';
+import PublicRout from '../components/Navigation/PublicRout';
 
 
-const RegisterPage = lazy(() => import('../Pages/registerPage'));
-const LoginPage = lazy(() => import('../Pages/loginPage'));
-const PhonebookPage = lazy(() => import('../Pages/phonebookPage'));
+const RegisterPage = lazy(() => import('../Pages/RegisterPage'));
+const LoginPage = lazy(() => import('../Pages/LoginPage'));
+const PhonebookPage = lazy(() => import('../Pages/PhonebookPage'));
 
 
 export const App = () => {
@@ -30,6 +30,7 @@ export const App = () => {
       {isFetchingCurrentUser ? (<h1>React Skeleton</h1>) :
         (<>
           <Header />
+
           <Suspense fallback={<p>'Upload...'</p>}>
             <Routes>
               <Route path='/register' element={

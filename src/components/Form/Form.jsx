@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useCreateContactMutation, useGetContactsQuery } from '../../../Redux/contacts/contacts';
+import { useCreateContactMutation, useGetContactsQuery } from '../../redux/contacts/contacts';
 import { toast } from 'react-toastify';
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
-import { UserForm } from './form.styled';
+import { UserForm } from './Form.styled';
 
 function Form(){
   const [createContact] = useCreateContactMutation();

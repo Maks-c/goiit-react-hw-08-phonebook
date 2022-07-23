@@ -1,7 +1,7 @@
-import { NavButton, NavLink, NavWrapper } from './authNav.styled';
+import { NavButton, NavLink, NavWrapper } from './AuthNav.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { authSelectors } from '../../Redux/auth';
-import authOperations from '../../Redux/auth/auth-operations';
+import { authSelectors } from '../../redux/auth';
+import authOperations from '../../redux/auth/auth-operations';
 
 const AuthNav = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);

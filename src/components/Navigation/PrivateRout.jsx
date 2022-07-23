@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { authSelectors } from '../Redux/auth';
+import { authSelectors } from '../../redux/auth';
 
 
 export default function PrivateRout({ children, navigateTo = '/' }){

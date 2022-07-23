@@ -1,10 +1,10 @@
-import { useGetContactsQuery } from '../../../Redux/contacts/contacts';
+import { useGetContactsQuery } from '../../redux/contacts/contacts';
 import { useSelector } from 'react-redux';
 import React from 'react';
-import ContactListItem from '../contactsListItem';
-import { List } from './contacts.styled';
+import ContactListItem from '../ContactsListItem';
+import { List } from './ContactsList.styled';
 
-const Contacts = () => {
+const ContactsList = () => {
   const { data } = useGetContactsQuery();
   const inputValue = useSelector(state => state.filter.value);
   const searchName = data?.filter(({ name }) => name.toLowerCase().includes(inputValue.toLowerCase()));
@@ -17,4 +17,4 @@ const Contacts = () => {
     </List>);
 };
 //===============start=============
-export default Contacts;
+export default ContactsList;
