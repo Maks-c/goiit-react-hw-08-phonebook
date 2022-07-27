@@ -5,17 +5,7 @@ import { authSelectors } from '../../redux/auth';
 const Navigation = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
-  return (
-    <nav>
-
-      {
-        isLoggedIn && (<Link to='/contacts'>Phone Book</Link>)
-      }
-
-    </nav>
-  );
-
+  return <nav>{isLoggedIn && <Link to="/contacts">Phone Book </Link>}</nav>;
 };
-
 
 export default Navigation;

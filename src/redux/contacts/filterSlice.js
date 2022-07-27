@@ -13,6 +13,6 @@ const filterSlice = createSlice({
   },
 });
 
-export default filterSlice.reducer
+export default filterSlice.reducer;
 //=======================================================================
-export const {addFilter } = filterSlice.actions;
+export const { addFilter } = filterSlice.actions;

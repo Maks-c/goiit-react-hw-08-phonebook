@@ -1,44 +1,49 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const token = {
-  set(token){
+  set(token) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
   },
-  unset(){
+  unset() {
     axios.defaults.headers.common['Authorization'] = '';
   },
 };
 
 const register = createAsyncThunk('auth/register', async credentials => {
-  try{
+  try {
     const { data } = await axios.post('/users/signup', credentials);
+    console.log(credentials);
     token.set(data.token);
-
     return data;
-  } catch (error){
-    toast.error(error.message);
+  } catch (error) {
+    alert('Not the correct email or password ');
   }
 });
 
-const logIn = createAsyncThunk('auth/login', async credentials => {
-  try{
-    const { data } = await axios.post('/users/login', credentials);
-    token.set(data.token);
-    return data;
-  } catch (error){
-    toast.error(error.message);
+const logIn = createAsyncThunk(
+  'auth/login',
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post('/users/login', credentials);
+      token.set(data.token);
+      return data;
+    } catch (error) {
+      if (error) {
+        alert('Not the correct email or password ');
+      }
+      return rejectWithValue(error);
+    }
   }
-});
+);
 
 const logOut = createAsyncThunk('auth/logout', async () => {
-  try{
+  try {
     await axios.post('/users/logout');
     token.unset();
-  } catch (error){
+  } catch (error) {
     return error;
   }
 });
@@ -48,21 +53,19 @@ const fetchCurrentUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
-    if(persistedToken === null) {
-      return thunkAPI.rejectWithValue();
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue(1);
     }
     token.set(persistedToken);
 
-    try{
+    try {
       const { data } = await axios.get('/users/current');
       return data;
-    } catch (error){
-
+    } catch (error) {
+      return error;
     }
-
-
-  });
-
+  }
+);
 
 const authOperations = {
   register,
@@ -72,4 +75,3 @@ const authOperations = {
 };
 
 export default authOperations;
-

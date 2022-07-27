@@ -1,1 +1,1 @@
-export {default} from './PhonebookPage'
+export { default } from './PhonebookPage';

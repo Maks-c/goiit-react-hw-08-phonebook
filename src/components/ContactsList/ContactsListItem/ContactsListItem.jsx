@@ -1,10 +1,9 @@
 import React from 'react';
 import { SpanItem } from './ContactsListItem.styled';
 
-import { useDeleteContactMutation } from '../../redux/contacts/contacts';
-import { Item } from '../ContactsList/ContactsList.styled';
+import { useDeleteContactMutation } from '../../../redux/contacts/contacts';
+import { Item } from '../ContactsList.styled';
 import Button from '@mui/material/Button';
-
 
 const ContactListItem = ({ id, name, number }) => {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
@@ -19,6 +18,5 @@ const ContactListItem = ({ id, name, number }) => {
     </Item>
   );
 };
-
 
 export default ContactListItem;

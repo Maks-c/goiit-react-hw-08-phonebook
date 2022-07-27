@@ -8,15 +8,19 @@ const AuthNav = () => {
   const dispatch = useDispatch();
   return (
     <NavWrapper>
-      <NavLink to='/register'>Registration</NavLink>
-      {isLoggedIn ?
-        <NavButton type='button'
-                   onClick={() => dispatch(authOperations.logOut())}>Log out</NavButton>
-        : <NavLink to='/login'>Login</NavLink>
-      }
+      <NavLink to="/register">Registration</NavLink>
+      {isLoggedIn ? (
+        <NavButton
+          type="button"
+          onClick={() => dispatch(authOperations.logOut())}
+        >
+          Log out
+        </NavButton>
+      ) : (
+        <NavLink to="/login">Login</NavLink>
+      )}
     </NavWrapper>
   );
 };
-
 
 export default AuthNav;

@@ -1,11 +1,14 @@
 import { useState } from 'react';
-import { useCreateContactMutation, useGetContactsQuery } from '../../redux/contacts/contacts';
+import {
+  useCreateContactMutation,
+  useGetContactsQuery,
+} from '../../redux/contacts/contacts';
 import { toast } from 'react-toastify';
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
 import { UserForm } from './Form.styled';
 
-function Form(){
+function Form() {
   const [createContact] = useCreateContactMutation();
   const { data } = useGetContactsQuery();
   const [name, setName] = useState('');
@@ -16,58 +19,57 @@ function Form(){
     name === 'name' ? setName(value) : setNumber(value);
   };
 
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
     const searchUser = await data.some(contact => {
       return contact.name.toLowerCase().includes(name.toLowerCase());
     });
 
-    if(searchUser) {
+    if (searchUser) {
       toast.warning(`${name} is already in contacts`);
       return;
     }
-    try{
+    try {
       await createContact({ name, number });
       toast.success(`${name} has added to contacts list`);
       console.log('success');
-    } catch (error){
+    } catch (error) {
       toast.error('Oops, something went wrong');
     }
     setName('');
     setNumber('');
   };
 
-
   return (
     <>
       <UserForm onSubmit={handleSubmit}>
         <TextField
           sx={{ mr: '25px' }}
-          variant='standard'
-          label='name'
-          type='text'
-          name='name'
+          variant="standard"
+          label="name"
+          type="text"
+          name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           onChange={handleChange}
           value={name}
-
         />
         <TextField
-          variant='standard'
-          label='number'
-          type='tel'
-          name='number'
-          pattern='\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}'
-          title='Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
+          variant="standard"
+          label="number"
+          type="tel"
+          name="number"
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           onChange={handleChange}
           value={number}
         />
-        <Button variant='contained' type='submit'>Add contact</Button>
+        <Button variant="contained" type="submit">
+          Add contact
+        </Button>
       </UserForm>
     </>
   );

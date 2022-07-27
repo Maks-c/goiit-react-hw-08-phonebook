@@ -1,14 +1,11 @@
 import React from 'react';
+import Container from '@mui/material/Container';
+import { Title } from './HomePage.styled';
 
-
-
-export default function HomePage(){
-
+export default function HomePage() {
   return (
-    <div>
-      <h1> Hello </h1>
-      <p>do something</p>
-    </div>
-  )
-
+    <Container>
+      <Title>Hello! This is Phonebook</Title>
+    </Container>
+  );
 }

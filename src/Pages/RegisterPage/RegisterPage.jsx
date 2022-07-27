@@ -13,14 +13,14 @@ const styles = {
   },
 };
 
-export default function RegisterPage(){
+export default function RegisterPage() {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
-    switch (name){
+    switch (name) {
       case 'name':
         setName(value);
         break;
@@ -47,14 +47,34 @@ export default function RegisterPage(){
     <div>
       <h1> Сторінка реестрації</h1>
       <RegisterForm onSubmit={handleSubmit} style={styles.form}>
-        <TextField variant='standard' label='name' type='text' name='name' value={name} onChange={handleChange} />
-        <TextField variant='standard' label='email' type='text' name='email' value={email} onChange={handleChange} />
-        <TextField variant='standard' label='password' type='text' name='password' value={password}
-                   onChange={handleChange} />
-        <Button type='submit' variant='contained'>Sign Up</Button>
+        <TextField
+          variant="standard"
+          label="name"
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleChange}
+        />
+        <TextField
+          variant="standard"
+          label="email"
+          type="text"
+          name="email"
+          value={email}
+          onChange={handleChange}
+        />
+        <TextField
+          variant="standard"
+          label="password"
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+        />
+        <Button type="submit" variant="contained">
+          Sign Up
+        </Button>
       </RegisterForm>
     </div>
   );
 }
-
-

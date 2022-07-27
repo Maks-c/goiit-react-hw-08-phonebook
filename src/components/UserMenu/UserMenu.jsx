@@ -2,9 +2,7 @@ import { useSelector } from 'react-redux';
 import { authSelectors } from 'src/redux/auth';
 import { MainHead } from './UserMenu.styled';
 
-
-export default function UserMenu(){
-
+export default function UserMenu() {
   const name = useSelector(authSelectors.getUserName);
 
   console.log(name);
@@ -15,5 +13,3 @@ export default function UserMenu(){
     </div>
   );
 }
-
-
