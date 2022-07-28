@@ -5,7 +5,6 @@ import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import { LoginForm } from './LoginPag.styled';
 
-
 const styles = {
   label: {
     display: 'flex',
@@ -41,35 +40,30 @@ export default function LoginPage() {
   };
 
   return (
+    <div>
+      <h1> Сторінка логування</h1>
+      <LoginForm onSubmit={handleSubmit} style={styles.form} autoComplete="off">
+        <TextField
+          variant="standard"
+          label="email"
+          type="text"
+          name="email"
+          value={email}
+          onChange={handleChange}
+        />
 
-      <div>
-        <h1> Сторінка логування</h1>
-        <LoginForm
-          onSubmit={handleSubmit}
-          style={styles.form}
-          autoComplete="off"
-        >
-          <TextField
-            variant="standard"
-            label="email"
-            type="text"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-
-          <TextField
-            variant="standard"
-            label="password"
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-          <Button type="submit" variant="contained">
-            Enter
-          </Button>
-        </LoginForm>
-      </div>
+        <TextField
+          variant="standard"
+          label="password"
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+        />
+        <Button type="submit" variant="contained">
+          Enter
+        </Button>
+      </LoginForm>
+    </div>
   );
 }

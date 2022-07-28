@@ -6,8 +6,8 @@ import Header from '../Header/Header';
 
 import Container from '@mui/material/Container';
 
-import PrivateRout from '../Navigation/PrivateRout';
-import PublicRout from '../Navigation/PublicRout';
+import PrivateRoute from '../Navigation/PrivateRoute';
+import PublicRoute from '../Navigation/PublicRoute';
 import HomePage from '../../Pages/HomePage';
 
 const RegisterPage = lazy(() => import('../../Pages/RegisterPage'));
@@ -34,32 +34,39 @@ export const App = () => {
           <Header />
           <Suspense fallback={<p>'Upload...'</p>}>
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route
+                path="/"
+                element={
+                  <PublicRoute>
+                    <HomePage />
+                  </PublicRoute>
+                }
+              />
 
               <Route
                 path="/register"
                 element={
-                  <PublicRout navigateTo="/contacts" restricted>
+                  <PublicRoute navigateTo="/contacts" restricted>
                     <RegisterPage />
-                  </PublicRout>
+                  </PublicRoute>
                 }
               />
 
               <Route
                 path="/login"
                 element={
-                  <PublicRout navigateTo="/contacts" restricted>
+                  <PublicRoute navigateTo="/contacts" restricted>
                     <LoginPage />
-                  </PublicRout>
+                  </PublicRoute>
                 }
               />
 
               <Route
                 path="/contacts"
                 element={
-                  <PrivateRout navigateTo="/login">
+                  <PrivateRoute navigateTo="/login">
                     <PhonebookPage />
-                  </PrivateRout>
+                  </PrivateRoute>
                 }
               />
             </Routes>
