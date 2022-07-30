@@ -5,7 +5,7 @@ import { useDeleteContactMutation } from '../../../redux/contacts/contacts';
 import { Item } from '../ContactsList.styled';
 import Button from '@mui/material/Button';
 
-const ContactListItem = ({ id, name, number }) => {
+const ContactsListItem = ({ id, name, number }) => {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
 
   return (
@@ -19,4 +19,4 @@ const ContactListItem = ({ id, name, number }) => {
   );
 };
 
-export default ContactListItem;
+export default ContactsListItem;
