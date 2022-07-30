@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { authSelectors } from 'src/redux/auth';
+import { authSelectors } from '../../redux/auth';
 import { MainHead } from './UserMenu.styled';
 
 export default function UserMenu() {
