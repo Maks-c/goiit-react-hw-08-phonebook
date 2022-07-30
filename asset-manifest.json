@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.e7720ab7.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.85af98ca.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.70449fae.js",
     "static/js/22.1861469a.chunk.js": "/goit-react-hw-08-phonebook/static/js/22.1861469a.chunk.js",
     "static/js/518.83cc896a.chunk.js": "/goit-react-hw-08-phonebook/static/js/518.83cc896a.chunk.js",
-    "static/css/629.5c915e3d.chunk.css": "/goit-react-hw-08-phonebook/static/css/629.5c915e3d.chunk.css",
-    "static/js/629.a3553edd.chunk.js": "/goit-react-hw-08-phonebook/static/js/629.a3553edd.chunk.js",
+    "static/css/305.06d2bb28.chunk.css": "/goit-react-hw-08-phonebook/static/css/305.06d2bb28.chunk.css",
+    "static/js/305.2e4244b8.chunk.js": "/goit-react-hw-08-phonebook/static/js/305.2e4244b8.chunk.js",
     "static/js/939.6a1bb2e7.chunk.js": "/goit-react-hw-08-phonebook/static/js/939.6a1bb2e7.chunk.js",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.e7720ab7.css.map": "/goit-react-hw-08-phonebook/static/css/main.e7720ab7.css.map",
-    "main.85af98ca.js.map": "/goit-react-hw-08-phonebook/static/js/main.85af98ca.js.map",
+    "main.70449fae.js.map": "/goit-react-hw-08-phonebook/static/js/main.70449fae.js.map",
     "22.1861469a.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/22.1861469a.chunk.js.map",
     "518.83cc896a.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/518.83cc896a.chunk.js.map",
-    "629.5c915e3d.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/629.5c915e3d.chunk.css.map",
-    "629.a3553edd.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/629.a3553edd.chunk.js.map",
+    "305.06d2bb28.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/305.06d2bb28.chunk.css.map",
+    "305.2e4244b8.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/305.2e4244b8.chunk.js.map",
     "939.6a1bb2e7.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/939.6a1bb2e7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e7720ab7.css",
-    "static/js/main.85af98ca.js"
+    "static/js/main.70449fae.js"
   ]
 }
