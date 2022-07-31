@@ -11,8 +11,6 @@ const ContactsList = () => {
     name.toLowerCase().includes(inputValue.toLowerCase())
   );
 
-
-
   return (
     <List>
       {searchName?.map(contacts => {

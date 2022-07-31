@@ -2,14 +2,12 @@ import { NavButton, NavLink, NavWrapper } from './AuthNav.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { authSelectors } from '../../redux/auth';
 import authOperations from '../../redux/auth/auth-operations';
-import { HomeLink } from '../Header/Header.styled';
 
 const AuthNav = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   const dispatch = useDispatch();
   return (
     <NavWrapper>
-
       <NavLink to="/register">Registration</NavLink>
       {isLoggedIn ? (
         <NavButton

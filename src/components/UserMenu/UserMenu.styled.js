@@ -22,13 +22,3 @@ export const MainHead = styled.h1`
     inset 0 0 5px rgba(53, 86, 129, 0.5);
   border-radius: 10px 10px 10px 10px;
 `;
-
-
-
-
-
-
-
-
-
-
