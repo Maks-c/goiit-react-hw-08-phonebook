@@ -11,16 +11,7 @@ const ContactsList = () => {
     name.toLowerCase().includes(inputValue.toLowerCase())
   );
 
-  // const { contacts } = useGetContactsQuery(undefined, {
-  //   selectFromResult: ({ data }) => {
-  //     console.log(data);
-  //     return {
-  //       contacts: data.filter((contact) =>
-  //         contact.name.toLowerCase().includes(inputValue.toLowerCase())
-  //       ),
-  //     };
-  //   },
-  // });
+
 
   return (
     <List>

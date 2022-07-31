@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const MainHead = styled.h1`
+  margin-left: 129px;
   text-align: center;
   font-weight: 600;
   font-family: 'Titillium Web', sans-serif;
@@ -16,8 +17,18 @@ export const MainHead = styled.h1`
   font-size: 36px;
   line-height: 40px;
   padding: 15px 15px 15px 15px;
-  color: #355681;
+  color: white;
   box-shadow: inset 0 0 0 1px rgba(53, 86, 129, 0.4),
-    inset 0 0 5px rgba(53, 86, 129, 0.5), inset -285px 0 35px white;
+    inset 0 0 5px rgba(53, 86, 129, 0.5);
   border-radius: 10px 10px 10px 10px;
 `;
+
+
+
+
+
+
+
+
+
+

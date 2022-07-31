@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, Suspense, lazy } from 'react';
 import { authOperations, authSelectors } from '../../redux/auth';
@@ -35,7 +35,7 @@ export const App = () => {
           <Header />
           <Suspense fallback={<p>'Upload...'</p>}>
             <Routes>
-              <Route path="/" element={<Layout/>}/>
+              <Route path="/" element={<Layout />} />
               <Route index element={<HomePage />} />
               <Route
                 path="/register"
@@ -63,6 +63,7 @@ export const App = () => {
                   </PrivateRoute>
                 }
               />
+              <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </Suspense>
         </>

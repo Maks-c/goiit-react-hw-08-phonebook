@@ -3,11 +3,11 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AppBar from '../AppBar/AppBar';
 
-export const Layout =()=>{
-  return(
+export const Layout = () => {
+  return (
     <>
-      <AppBar/>
-    <Outlet/>
+      <AppBar />
+      <Outlet />
       <ToastContainer
         position="top-center"
         autoClose={3000}
@@ -19,7 +19,6 @@ export const Layout =()=>{
         draggable
         pauseOnHover
       />
-
     </>
-  )
-}
+  );
+};

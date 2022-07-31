@@ -2,16 +2,17 @@ import { AppBar, Toolbar, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { authSelectors } from '../../redux/auth';
 import AuthNav from '../AuthNav/AuthNav';
+import Navigation from '../Navigation/Navigation';
+import UserMenu from '../UserMenu/UserMenu';
 
 function Header() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-  const name = useSelector(authSelectors.getUserName);
   return (
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="span">
-          {isLoggedIn ? <h3>Hello,{name}</h3> : <h3>Welcome</h3>}
-          <AuthNav />
+          <Navigation />
+          {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </Typography>
       </Toolbar>
     </AppBar>

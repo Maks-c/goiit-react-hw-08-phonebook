@@ -45,6 +45,7 @@ function Form() {
     <>
       <UserForm onSubmit={handleSubmit}>
         <TextField
+          autoComplete="off"
           sx={{ mr: '25px' }}
           variant="standard"
           label="name"
@@ -57,6 +58,7 @@ function Form() {
           value={name}
         />
         <TextField
+          autoComplete="off"
           variant="standard"
           label="number"
           type="tel"

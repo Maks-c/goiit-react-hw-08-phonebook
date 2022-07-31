@@ -9,7 +9,7 @@ const AuthNav = () => {
   const dispatch = useDispatch();
   return (
     <NavWrapper>
-      <HomeLink to="/">Home</HomeLink>
+
       <NavLink to="/register">Registration</NavLink>
       {isLoggedIn ? (
         <NavButton
