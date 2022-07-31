@@ -28,7 +28,7 @@ export default function UserMenu() {
   console.log(name);
   return (
     <div style={styles.container}>
-      <img/>
+
       <span style={styles.name}>Welcome, {name}</span>
       <Button variant="contained" type="button" onClick={()=>dispatch(authOperations.logOut())}>
         Logout
