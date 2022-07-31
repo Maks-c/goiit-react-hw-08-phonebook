@@ -6,8 +6,8 @@ import Header from '../Header/Header';
 
 import Container from '@mui/material/Container';
 
-import PrivateRoute from '../Routes/PrivateRoute';
-import PublicRoute from '../Routes/PublicRoute';
+import PrivateRoute from '../routes/PrivateRoute';
+import PublicRoute from '../routes/PublicRoute';
 import HomePage from '../../Pages/HomePage';
 import { Layout } from '../Layout/Layout';
 
@@ -37,7 +37,6 @@ export const App = () => {
             <Routes>
               <Route path="/" element={<Layout/>}/>
               <Route index element={<HomePage />} />
-
               <Route
                 path="/register"
                 element={
